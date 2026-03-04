@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 43% 99%;
+    --foreground: 250 65% 5%;
+    --card: 240 43% 99%;
+    --card-foreground: 250 65% 5%;
+    --border: 240 20% 88%;
+    --muted: 240 30% 95%;
+    --muted-foreground: 240 10% 45%;
+    --primary: 157 69% 63%;
+    --primary-foreground: 250 65% 5%;
+    --secondary: 170 73% 56%;
+    --secondary-foreground: 250 65% 5%;
+    --accent: 243 79% 40%;
+    --accent-foreground: 0 0% 100%;
+    --scrollbar-track: 240 20% 93%;
+    --scrollbar-thumb: 243 60% 55%;
+  }
+
+  .dark {
+    --background: 240 30% 6%;
+    --foreground: 240 20% 93%;
+    --card: 240 25% 10%;
+    --card-foreground: 240 20% 93%;
+    --border: 240 20% 20%;
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 15% 60%;
+    --primary: 157 55% 45%;
+    --primary-foreground: 240 20% 93%;
+    --secondary: 170 55% 40%;
+    --secondary-foreground: 240 20% 93%;
+    --accent: 243 70% 65%;
+    --accent-foreground: 0 0% 100%;
+    --scrollbar-track: 240 20% 10%;
+    --scrollbar-thumb: 243 50% 50%;
+  }
+}
+
+html {
+  /* Lenis handles smooth scrolling */
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--scrollbar-track));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--scrollbar-thumb));
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+}
+
+/* Selection color */
+::selection {
+  background: hsl(var(--accent) / 0.3);
+  color: hsl(var(--foreground));
+}
