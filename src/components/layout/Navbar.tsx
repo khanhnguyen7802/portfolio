@@ -32,7 +32,7 @@ export default function Navbar() {
               href="/"
               className="text-xl font-bold text-accent hover:opacity-80 transition-opacity"
             >
-              &lt;Portfolio /&gt;
+              &lt;📁 Khanh Nguyen /&gt;
             </Link>
 
             {/* Desktop Nav */}

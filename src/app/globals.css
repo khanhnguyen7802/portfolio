@@ -4,20 +4,20 @@
 
 @layer base {
   :root {
-    --background: 240 43% 99%;
-    --foreground: 250 65% 5%;
-    --card: 240 43% 99%;
-    --card-foreground: 250 65% 5%;
-    --border: 240 20% 88%;
-    --muted: 240 30% 95%;
-    --muted-foreground: 240 10% 45%;
-    --primary: 157 69% 63%;
-    --primary-foreground: 250 65% 5%;
-    --secondary: 170 73% 56%;
-    --secondary-foreground: 250 65% 5%;
+    --background: 170 20% 96%;
+    --foreground: 195 20% 10%;
+    --card: 170 16% 97%;
+    --card-foreground: 195 20% 10%;
+    --border: 170 14% 87%;
+    --muted: 170 16% 92%;
+    --muted-foreground: 170 10% 42%;
+    --primary: 168 55% 48%;
+    --primary-foreground: 195 20% 10%;
+    --secondary: 180 50% 45%;
+    --secondary-foreground: 195 20% 10%;
     --accent: 243 79% 40%;
     --accent-foreground: 0 0% 100%;
-    --scrollbar-track: 240 20% 93%;
+    --scrollbar-track: 170 16% 91%;
     --scrollbar-thumb: 243 60% 55%;
   }
 

@@ -6,7 +6,7 @@ const highlights = [
   personalInfo.name, "University of Twente, Netherlands", "Technical Computer Science",
   "business insights", 
   "teaching assistant", "Operating System", 
-  "FAIR principles", "data mesh", "CBI-EDOC 2025 Conference", "Forum",
+  "FAIR principles", "data mesh", "CBI-EDOC 2025 Conference",
   "enterprise", "architecture", "business processes",
   "data engineer",
   "cloud computing",
@@ -14,8 +14,39 @@ const highlights = [
   "open", "connect"
 ];
 
-function highlightBio(bio: string) {
-  let result: (string | React.ReactElement)[] = [bio];
+function parseLinks(text: string): (string | React.ReactElement)[] {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const result: (string | React.ReactElement)[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      result.push(text.slice(lastIndex, match.index));
+    }
+    const isExternal = match[2].startsWith("http");
+    result.push(
+      <a
+        key={`link-${match.index}`}
+        href={match[2]}
+        className="text-accent font-semibold underline underline-offset-2 hover:text-accent/80 transition-colors"
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    result.push(text.slice(lastIndex));
+  }
+
+  return result.length > 0 ? result : [text];
+}
+
+function highlightText(parts: (string | React.ReactElement)[]): (string | React.ReactElement)[] {
+  let result = parts;
 
   highlights.forEach((phrase) => {
     result = result.flatMap((part) => {
@@ -36,6 +67,23 @@ function highlightBio(bio: string) {
   return result;
 }
 
+function renderRichBio(bio: string) {
+  // Split by <br /> tags or \n
+  const paragraphs = bio.split(/<br\s*\/?>|\n/).map((p) => p.trim()).filter(Boolean);
+
+  return paragraphs.map((paragraph, i) => (
+    <span key={i}>
+      {i > 0 && (
+        <>
+          <br />
+          <br />
+        </>
+      )}
+      {highlightText(parseLinks(paragraph))}
+    </span>
+  ));
+}
+
 
 export default function IntroSection() {
   return (
@@ -44,7 +92,7 @@ export default function IntroSection() {
         {/* Text */}
         <div className="md:col-span-8 text-center md:text-left">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            {highlightBio(personalInfo.completeBio)}
+            {renderRichBio(personalInfo.completeBio)}
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
             {personalInfo.socialLinks.map((link) => (
@@ -53,7 +101,7 @@ export default function IntroSection() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm text-muted-foreground hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-foreground/20 text-sm text-muted-foreground hover:border-accent hover:text-accent transition-colors"
               >
                 {link.label}
               </a>
