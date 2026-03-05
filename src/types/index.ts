@@ -14,6 +14,7 @@ export interface PersonalInfo {
   firstName: string;
   titles: string[];
   bio: string;
+  completeBio: string;
   email: string;
   socialLinks: SocialLink[];
 }

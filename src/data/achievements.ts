@@ -3,15 +3,15 @@ import { Achievement } from "@/types";
 export const achievements: Achievement[] = [
   {
     label: "Projects Completed",
-    value: "15+",
+    value: "5+",
     icon: "rocket",
-    description: "End-to-end data solutions delivered",
+    description: "End-to-end software and data solutions delivered",
   },
   {
     label: "Certifications",
-    value: "5",
+    value: "4",
     icon: "certificate",
-    description: "Cloud & data engineering certifications",
+    description: "Cloud Data Engineering certifications",
   },
   {
     label: "Years Experience",

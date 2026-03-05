@@ -1,6 +1,7 @@
 import { BlogPost } from "@/types";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import Image from "next/image";
 
 interface BlogCardProps {
   blog: BlogPost;
@@ -16,7 +17,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
     >
       <Card className="h-full flex flex-col">
         {/* Thumbnail */}
-        <div className="h-48 bg-gradient-to-br from-accent/10 to-muted flex items-center justify-center border-b border-border overflow-hidden">
+        {/* <div className="h-48 bg-gradient-to-br from-accent/10 to-muted flex items-center justify-center border-b border-border overflow-hidden">
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <svg
               width="40"
@@ -36,7 +37,19 @@ export default function BlogCard({ blog }: BlogCardProps) {
             </svg>
             <span className="text-xs">Blog Preview</span>
           </div>
-        </div>
+        </div> */}
+
+          {/* Thumbnail */}
+          <div className="h-40 bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center border-b border-border overflow-hidden relative">
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        
+
 
         {/* Content */}
         <div className="p-4 flex-1 flex flex-col">

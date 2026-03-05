@@ -2,27 +2,28 @@ import { Video } from "@/types";
 
 export const videos: Video[] = [
   {
-    title: "Building Scalable Data Pipelines with Apache Spark",
+    title: "Setup a (Linux) Azure Virtual Machine from Windows - 2025",
     description:
-      "Conference talk on designing and optimizing Spark-based data pipelines for production workloads, covering partitioning strategies and resource tuning.",
-    thumbnail: "/images/videos/spark-talk.png",
-    link: "https://www.youtube.com/watch?v=example1",
-    category: "Conference Talk",
+      "How to setup an Azure VM in 2025-2026. \
+      This video includes Azure VM setup, GUI for VM and downloading VSCode in this VM.",
+    thumbnail: "",
+    link: "https://youtu.be/2cz8a_wtX6w",
+    category: "Setup Tutorial",
   },
   {
-    title: "Modern Data Stack Workshop: From Ingestion to Insights",
+    title: "Automating setup in pgAdmin + postgres using Docker",
     description:
-      "Hands-on workshop demonstrating how to build a complete data pipeline using Airbyte, dbt, and Snowflake in under an hour.",
-    thumbnail: "/images/videos/mds-workshop.png",
-    link: "https://www.youtube.com/watch?v=example2",
-    category: "Workshop",
+      "This video demonstrates automatic setup of pgAdmin + postgres in Docker (automatic server + database registration).",
+    thumbnail: "",
+    link: "https://youtu.be/_iqCWi_UoOc",
+    category: "Environment Setup Tutorial",
   },
   {
-    title: "Data Engineering with Python: Best Practices",
+    title: "How to install dbt & DuckDB using Docker",
     description:
-      "Webinar covering Python best practices for data engineers, including testing strategies, project structure, and performance optimization.",
-    thumbnail: "/images/videos/python-de.png",
-    link: "https://www.youtube.com/watch?v=example3",
-    category: "Webinar",
+      "Since I don't want to clean up the 'dependency mess' after installing some packages, here is the quick tutorial on how to set up dbt and DuckDB using Docker.",
+    thumbnail: "",
+    link: "https://youtu.be/ew4MvyHwbho",
+    category: "Installation Tutorial",
   },
 ];

@@ -1,5 +1,6 @@
 import { Certification } from "@/types";
 import Card from "@/components/ui/Card";
+import Image from "next/image";
 
 interface CertificationCardProps {
   certification: Certification;
@@ -15,7 +16,7 @@ export default function CertificationCard({ certification }: CertificationCardPr
     >
       <Card className="h-full">
         {/* Thumbnail placeholder */}
-        <div className="h-40 bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center border-b border-border">
+        {/* <div className="h-40 bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center border-b border-border">
           <div className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center text-accent">
             <svg
               width="32"
@@ -31,7 +32,16 @@ export default function CertificationCard({ certification }: CertificationCardPr
               <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
             </svg>
           </div>
-        </div>
+        </div> */}
+
+          <div className="h-40 bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center border-b border-border overflow-hidden relative">
+            <Image
+              src={certification.thumbnail}
+              alt={certification.name}
+              fill
+              className="object-cover"
+            />
+          </div>
 
         {/* Content */}
         <div className="p-4">

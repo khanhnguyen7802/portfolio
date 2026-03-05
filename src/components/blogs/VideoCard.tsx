@@ -1,12 +1,19 @@
+"use client";
+
 import { Video } from "@/types";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import Image from "next/image";
+import { extractYoutubeId, getYoutubeThumbnailUrl } from "@/lib/youtube";
 
 interface VideoCardProps {
   video: Video;
 }
 
 export default function VideoCard({ video }: VideoCardProps) {
+  const videoId = extractYoutubeId(video.link);
+  const thumbnailUrl = videoId ? getYoutubeThumbnailUrl(videoId) : video.thumbnail;
+
   return (
     <a
       href={video.link}
@@ -15,25 +22,34 @@ export default function VideoCard({ video }: VideoCardProps) {
       className="block max-w-sm w-full group"
     >
       <Card className="h-full flex flex-col">
-        {/* Thumbnail with play overlay */}
+        {/* YouTube Thumbnail with play overlay */}
         <div className="relative h-48 bg-gradient-to-br from-accent/10 to-muted flex items-center justify-center border-b border-border overflow-hidden">
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-accent/50"
-            >
-              <rect width="20" height="15" x="2" y="3" rx="2" />
-              <path d="m10 8 6 4-6 4V8Z" fill="currentColor" />
-            </svg>
-            <span className="text-xs">Video Preview</span>
-          </div>
+          {videoId && thumbnailUrl ? (
+            <Image
+              src={thumbnailUrl}
+              alt={video.title}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <div className="flex flex-col items-center gap-2 text-muted-foreground">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-accent/50"
+              >
+                <rect width="20" height="15" x="2" y="3" rx="2" />
+                <path d="m10 8 6 4-6 4V8Z" fill="currentColor" />
+              </svg>
+              <span className="text-xs">Video Preview</span>
+            </div>
+          )}
 
           {/* Play button overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">

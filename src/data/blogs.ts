@@ -2,43 +2,43 @@ import { BlogPost } from "@/types";
 
 export const blogs: BlogPost[] = [
   {
-    title: "Building a Modern Data Platform from Scratch",
+    title: "Introduction to Docker",
     description:
-      "A comprehensive guide on designing and implementing a data platform using the modern data stack, covering ingestion, transformation, and serving layers.",
-    type: "Cloud",
-    image: "/images/blogs/data-platform.png",
-    link: "https://medium.com/@yourusername/building-data-platform",
+      "A brief introduction to Docker, including installation guides.",
+    type: "Containerization",
+    image: "/images/blogs/docker.png",
+    link: "https://medium.com/towards-data-engineering/understanding-docker-from-its-roots-part-1-44ed1e111313",
   },
   {
-    title: "Apache Airflow Best Practices for Production",
+    title: "Road to advanced SQL",
     description:
-      "Lessons learned from running Airflow in production at scale, including DAG design patterns, monitoring strategies, and common pitfalls to avoid.",
-    type: "Infrastructure",
-    image: "/images/blogs/airflow-practices.png",
-    link: "https://medium.com/@yourusername/airflow-best-practices",
+      "Overall roadmap to master SQL, with advanced techniques and practice exercises.",
+    type: "Queries",
+    image: "/images/blogs/sql.png",
+    link: "https://medium.com/learning-data/sql-queries-can-do-more-than-what-you-thought-c271898d8ee9",
   },
   {
-    title: "Data Quality at Scale with Great Expectations",
+    title: "Introduction to Airflow 3.0",
     description:
-      "How we implemented automated data quality checks across 200+ tables using Great Expectations, integrated with our Airflow pipelines.",
-    type: "Data Engineering",
-    image: "/images/blogs/data-quality.png",
-    link: "https://medium.com/@yourusername/data-quality-at-scale",
+      "A brief introduction and installation guide to Airflow 3 - a popular orchestration tool.",
+    type: "Orchestration",
+    image: "/images/blogs/airflow.png",
+    link: "https://medium.com/learning-data/apache-airflow-3-0-a-general-to-deep-picture-part-1-d09cee921cd7",
   },
   {
-    title: "Migrating from Batch to Real-Time Streaming",
+    title: "All about SQL JOINS",
     description:
-      "Our journey migrating critical data pipelines from batch processing to real-time streaming using Kafka and Spark Structured Streaming.",
-    type: "Streaming",
-    image: "/images/blogs/batch-to-streaming.png",
-    link: "https://medium.com/@yourusername/batch-to-streaming",
+      "Explanation of different types of SQL JOINs and their use cases. Comprehensive illustration is included.",
+    type: "Queries",
+    image: "/images/blogs/sql-joins.png",
+    link: "https://medium.com/towards-data-engineering/sql-joins-do-you-know-them-all-0de5cd1aee3b",
   },
-  {
-    title: "Cost Optimization Strategies for Cloud Data Warehouses",
-    description:
-      "Practical strategies that helped us reduce our Snowflake and BigQuery costs by 40% without sacrificing query performance.",
-    type: "Cloud",
-    image: "/images/blogs/cost-optimization.png",
-    link: "https://medium.com/@yourusername/cloud-cost-optimization",
-  },
+  // {
+  //   title: "Cost Optimization Strategies for Cloud Data Warehouses",
+  //   description:
+  //     "Practical strategies that helped us reduce our Snowflake and BigQuery costs by 40% without sacrificing query performance.",
+  //   type: "Cloud",
+  //   image: "/images/blogs/cost-optimization.png",
+  //   link: "https://medium.com/@yourusername/cloud-cost-optimization",
+  // },
 ];

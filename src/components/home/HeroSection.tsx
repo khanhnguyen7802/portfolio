@@ -15,13 +15,13 @@ export default function HeroSection() {
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               I&apos;m{" "}
-              <span className="text-accent">{personalInfo.name}</span>
+              <span className="text-accent">{personalInfo.firstName}</span>
             </h1>
             <div className="text-xl md:text-2xl lg:text-3xl font-medium min-h-[2.5rem]">
               <Typewriter strings={personalInfo.titles} />
             </div>
             <p className="mt-6 text-muted-foreground max-w-lg mx-auto md:mx-0">
-              Building scalable data solutions and transforming raw data into actionable insights.
+              Building data solutions and transforming raw data into actionable insights.
             </p>
 
             {/* Social links */}

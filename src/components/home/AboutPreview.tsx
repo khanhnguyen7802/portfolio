@@ -3,11 +3,13 @@ import Container from "@/components/ui/Container";
 import { personalInfo } from "@/data/personal";
 
 const highlights = [
-  "Data Engineer",
-  "scalable data pipelines",
+  "data engineer",
+  "data pipelines",
   "cloud infrastructure",
-  "analytics platforms",
-  "data-driven decision making",
+  "cloud analytics platforms",
+  "Python",
+  "SQL",
+  "Azure", "Google Cloud"
 ];
 
 function highlightBio(bio: string) {

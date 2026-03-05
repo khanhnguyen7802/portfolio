@@ -1,6 +1,42 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { personalInfo } from "@/data/personal";
 
+
+const highlights = [
+  personalInfo.name, "University of Twente, Netherlands", "Technical Computer Science",
+  "business insights", 
+  "teaching assistant", "Operating System", 
+  "FAIR principles", "data mesh", "CBI-EDOC 2025 Conference", "Forum",
+  "enterprise", "architecture", "business processes",
+  "data engineer",
+  "cloud computing",
+  "cloud data platforms",
+  "open", "connect"
+];
+
+function highlightBio(bio: string) {
+  let result: (string | React.ReactElement)[] = [bio];
+
+  highlights.forEach((phrase) => {
+    result = result.flatMap((part) => {
+      if (typeof part !== "string") return [part];
+      const segments = part.split(new RegExp(`(${phrase})`, "gi"));
+      return segments.map((seg, i) =>
+        seg.toLowerCase() === phrase.toLowerCase() ? (
+          <span key={`${phrase}-${i}`} className="text-accent font-semibold">
+            {seg}
+          </span>
+        ) : (
+          seg
+        )
+      );
+    });
+  });
+
+  return result;
+}
+
+
 export default function IntroSection() {
   return (
     <AnimatedSection>
@@ -8,7 +44,7 @@ export default function IntroSection() {
         {/* Text */}
         <div className="md:col-span-8 text-center md:text-left">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            {personalInfo.bio}
+            {highlightBio(personalInfo.completeBio)}
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
             {personalInfo.socialLinks.map((link) => (
