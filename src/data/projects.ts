@@ -66,7 +66,7 @@ export const projects: Project[] = [
     tags: ["Nextjs", "React", "TypeScript", "JavaScript"],
     links: [
       { text: "GitHub", href: "https://github.com/khanhnguyen7802/portfolio" },
-      { text: "Link demo", href: "#" },
+      { text: "Link demo", href: "https://portfolio-rho-three-17ppbgpxsl.vercel.app/" },
     ],
   },
   {

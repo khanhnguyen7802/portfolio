@@ -19,7 +19,18 @@ export const metadata: Metadata = {
     default: "Portfolio | Khanh Nguyen",
     template: "%s | Khanh Nguyen",
   },
-  description: "Personal portfolio showcasing my projects, skills, and experience.",
+  description: "Personal portfolio of Khanh Nguyen — Data Engineer specializing in scalable pipelines, cloud analytics, and ETL systems.",
+  openGraph: {
+    title: "Portfolio | Khanh Nguyen",
+    description: "Personal portfolio of Khanh Nguyen — Data Engineer specializing in scalable pipelines, cloud analytics, and ETL systems.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Portfolio | Khanh Nguyen",
+    description: "Personal portfolio of Khanh Nguyen — Data Engineer specializing in scalable pipelines, cloud analytics, and ETL systems.",
+  },
 };
 
 export default function RootLayout({

@@ -8,9 +8,10 @@ import Badge from "@/components/ui/Badge";
 
 interface ProjectCardProps {
   project: Project;
+  priority?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -23,6 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={priority}
         />
       </div>
 

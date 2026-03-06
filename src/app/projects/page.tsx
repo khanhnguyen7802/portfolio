@@ -36,7 +36,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedProjects.map((project, i) => (
             <AnimatedSection key={project.title} delay={i * 0.08}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} priority={i < 3} />
             </AnimatedSection>
           ))}
         </div>

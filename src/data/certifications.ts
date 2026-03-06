@@ -20,7 +20,7 @@ export const certifications: Certification[] = [
     organization: "Databricks",
     date: "Jul 2025",
     thumbnail: "/images/certifications/databricks-data-engineer-associate.png",
-    url: "https://credentials.databricks.com/e5332580-3618-4baa-96a5-3c2a81d0b4d2\#acc.A3gOb9cX",
+    url: "https://credentials.databricks.com/e5332580-3618-4baa-96a5-3c2a81d0b4d2#acc.A3gOb9cX",
   },
   {
     name: "Microsoft Certified: Azure Data Fundamentals",
