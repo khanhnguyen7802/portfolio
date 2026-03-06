@@ -14,7 +14,7 @@ export default function Badge({ children, variant = "default", className }: Badg
         {
           "bg-muted text-muted-foreground": variant === "default",
           "bg-accent text-accent-foreground": variant === "accent",
-          "border border-accent/50 text-accent": variant === "outline",
+          "border-2 border-accent/60 text-accent": variant === "outline",
         },
         className
       )}

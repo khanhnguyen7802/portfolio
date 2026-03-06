@@ -25,7 +25,7 @@ export default function VideoList() {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2.5 rounded-full border border-accent text-accent font-medium text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+            className="px-6 py-2.5 rounded-full border-2 border-accent text-accent font-medium text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
             {showAll ? "Show Less" : "Show More"}
           </button>

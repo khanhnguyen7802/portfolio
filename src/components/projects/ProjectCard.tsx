@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { Project } from "@/types";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
@@ -9,26 +11,19 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <Card className="h-full flex flex-col">
-      {/* Image placeholder */}
-      <div className="h-48 bg-gradient-to-br from-accent/10 to-muted flex items-center justify-center border-b border-border">
-        <div className="flex flex-col items-center gap-2 text-muted-foreground">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-accent/50"
-          >
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-          </svg>
-          <span className="text-xs">Project Preview</span>
-        </div>
+      {/* Image */}
+      <div className="relative h-48 w-full bg-gradient-to-br from-accent/10 to-muted border-b-2 border-border overflow-hidden">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
 
       {/* Content */}
@@ -36,9 +31,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h3 className="text-lg font-bold text-card-foreground mb-2">
           {project.title}
         </h3>
-        <p className="text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
+        <p className={`text-sm text-muted-foreground mb-4 ${!isExpanded ? 'line-clamp-3' : ''}`}>
           {project.description}
         </p>
+
+        {/* Show More/Less button */}
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-xs text-accent font-medium hover:text-accent/80 transition-colors mb-4 text-left"
+        >
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </button>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5 mb-4">
@@ -57,7 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border-2 border-accent/60 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               {link.text === "GitHub" && (

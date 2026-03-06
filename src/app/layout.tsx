@@ -16,8 +16,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Your Name",
-    template: "%s | Your Name",
+    default: "Portfolio | Khanh Nguyen",
+    template: "%s | Khanh Nguyen",
   },
   description: "Personal portfolio showcasing my projects, skills, and experience.",
 };

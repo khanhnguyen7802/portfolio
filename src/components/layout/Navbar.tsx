@@ -18,10 +18,10 @@ export default function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed top-0 w-full z-50 backdrop-blur-md border-b",
+          "fixed top-0 w-full z-50 backdrop-blur-md border-b-2",
           "transition-[background-color,border-color,box-shadow] duration-300 ease-in-out",
           isScrolled
-            ? "bg-background/90 border-border/50 dark:border-border shadow-lg dark:shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+            ? "bg-background/90 border-border dark:border-border shadow-lg dark:shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
             : "bg-transparent border-transparent"
         )}
       >

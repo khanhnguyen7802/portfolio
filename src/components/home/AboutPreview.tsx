@@ -42,7 +42,7 @@ export default function AboutPreview() {
       <Container>
         <AnimatedSection>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="relative px-6 py-8 rounded-2xl bg-card border border-border/60">
+            <div className="relative px-6 py-8 rounded-2xl bg-card border-2 border-border">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 rounded-full bg-gradient-to-r from-primary via-accent to-secondary" />
               <div className="text-lg md:text-xl leading-relaxed text-muted-foreground text-left">
                 {lines.map((line, i) => (

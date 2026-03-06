@@ -58,7 +58,7 @@ export default function TechnologiesSection() {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {categories.map((category, i) => (
         <AnimatedSection key={category} delay={i * 0.08}>
-          <div className="p-5 rounded-xl border border-border bg-card h-full">
+          <div className="p-5 rounded-xl border-2 border-border bg-card h-full">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               {category}
             </h3>
@@ -73,9 +73,9 @@ export default function TechnologiesSection() {
                       title={skill.name}
                       className={cn(
                         "flex items-center gap-2 px-3 py-1.5 rounded-lg",
-                        "bg-muted/50 border border-border/50",
+                        "bg-muted/50 border-2 border-border",
                         "text-sm text-muted-foreground",
-                        "hover:border-accent/40 hover:text-foreground transition-colors"
+                        "hover:border-accent/50 hover:text-foreground transition-colors"
                       )}
                     >
                       <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center text-accent">
