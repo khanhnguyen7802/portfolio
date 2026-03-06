@@ -1,8 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">Personal Portfolio 
+  <br>
+  👉<a href="https://khanhnguyen7802.vercel.app" target='_blank'>khanhnguyen7802.vercel.app</a>👈 
+</h1>
+
+![alt text](img/preview.gif)
+
+
+## About 
+This project is my personal portfolio where I introduce myself as well as my skills. 
+
+> Inspired by [DevanshSahni's](https://github.com/DevanshSahni/Portfolio), [soumyajit4419's](https://github.com/soumyajit4419/Portfolio) and [Rodel's](https://github.com/rodelvr/rodel-portfolio.github.io) portfolio.
+
+Thank you Copilot for helping me accomplish this lmao. 
+### Techstack
+- Next.js
+- TypeScript
+- CSS 
+- Deployment with **Vercel**
+
+### Some features:
+- Multiple tabs
+- Fully responsive 
+- Dark mode 😘
+- Smooth scroll
+- Hyperlinked icons
 
 ## Getting Started
+First, go to terminal and `npm install` to download all the required packages.
 
-First, run the development server:
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +42,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+It will take roughly 5-10s to first compile the tabs. Then off you go! 
 
-## Learn More
+## Usage Instruction
+The whole project is straight-forward as it is clearly divided into folders:
+- `public`: contains the images/icons used in any tabs of the website. 
+- `src`: main source code
+  - `app`: contains the page template, divided into corresponding tabs. Each tab will call its corresponding `components`
+  - `components`: how components are created to be used in each tab
+  - `data`: your data to be displayed 
+  - ...
 
-To learn more about Next.js, take a look at the following resources:
+## Support & Contribution
+If you like this repo, leave a ⭐
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pls open an issue if you find any bugs or want to improve the project!
